@@ -1,7 +1,7 @@
 " vim-bootstrap b0a75e4
 
 "*****************************************************************************
-"" Vim-PLug core
+"" Vim-PLug core {{{
 "*****************************************************************************
 if has('vim_starting')
   set nocompatible               " Be iMproved
@@ -27,9 +27,10 @@ endif
 
 " Required:
 call plug#begin(expand('~/./plugged'))
+"}}}
 
 "*****************************************************************************
-"" Plug install packages
+"" Plug install packages {{{
 "*****************************************************************************
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -79,9 +80,10 @@ Plug 'honza/vim-snippets'
 "" Color
 Plug 'tomasr/molokai'
 Plug 'jacoborus/tender.vim'
+"}}}
 
 "*****************************************************************************
-"" Custom bundles
+"" Custom bundles{{{
 "*****************************************************************************
 
 " c
@@ -149,7 +151,7 @@ Plug 'racer-rust/vim-racer'
 
 " Rust.vim
 Plug 'rust-lang/rust.vim'
-
+"}}}
 
 "*****************************************************************************
 "****************************************************************************
@@ -166,7 +168,7 @@ filetype plugin indent on
 
 
 "*****************************************************************************
-"" Basic Setup
+"" Basic Setup{{{
 "*****************************************************************************"
 "" Encoding
 set encoding=utf-8
@@ -212,9 +214,10 @@ let g:session_directory = "~/./session"
 let g:session_autoload = "no"
 let g:session_autosave = "no"
 let g:session_command_aliases = 1
+"}}}
 
 "*****************************************************************************
-"" Visual Settings
+"" Visual Settings {{{
 "*****************************************************************************
 syntax on
 set ruler
@@ -293,9 +296,10 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
+"}}}
 
 "*****************************************************************************
-"" Abbreviations
+"" Abbreviations {{{
 "*****************************************************************************
 "" no one is really happy until you have this shortcuts
 cnoreabbrev W! w!
@@ -337,9 +341,9 @@ if g:vim_bootstrap_editor == 'nvim'
 else
   nnoremap <silent> <leader>sh :VimShellCreate<CR>
 endif
-
+"}}}
 "*****************************************************************************
-"" Functions
+"" Functions {{{
 "*****************************************************************************
 if !exists('*s:setupWrapping')
   function s:setupWrapping()
@@ -348,9 +352,9 @@ if !exists('*s:setupWrapping')
     set textwidth=79
   endfunction
 endif
-
+"}}}
 "*****************************************************************************
-"" Autocmd Rules
+"" Autocmd Rules {{{
 "*****************************************************************************
 "" The PC is fast enough, do syntax highlight syncing from start unless 200 lines
 augroup vimrc-sync-fromstart
@@ -378,9 +382,10 @@ augroup vimrc-make-cmake
 augroup END
 
 set autoread
+"}}}
 
 "*****************************************************************************
-"" Mappings
+"" Mappings {{{
 "*****************************************************************************
 
 "" Split
@@ -507,9 +512,10 @@ vnoremap K :m '<-2<CR>gv=gv
 
 "" Open current line on GitHub
 nnoremap <Leader>o :.Gbrowse<CR>
+"}}}
 
 "*****************************************************************************
-"" Custom configs
+"" Custom configs {{{
 "*****************************************************************************
 
 " c
@@ -695,7 +701,7 @@ au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
-
+"}}}
 
 "*****************************************************************************
 "*****************************************************************************
@@ -706,7 +712,7 @@ if filereadable(expand("~/.rc.local"))
 endif
 
 "*****************************************************************************
-"" Convenience variables
+"" Convenience variables {{{
 "*****************************************************************************
 
 " vim-airline
@@ -763,3 +769,4 @@ set undolevels=1000
 set ruler
 set showcmd
 set showmatch
+"}}}

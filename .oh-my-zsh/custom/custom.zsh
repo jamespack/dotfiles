@@ -1,0 +1,1 @@
+alias vimrc='${=EDITOR} ~/.vimrc'
